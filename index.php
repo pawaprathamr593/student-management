@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg-light">
@@ -282,6 +283,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         >
                             Reset
                         </button>
+
+                        <a href="students.php" class="btn btn-outline-primary mt-2">
+                            View Students
+                        </a>
 
                     </div>
 

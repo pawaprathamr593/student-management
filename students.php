@@ -51,6 +51,7 @@ if ($search !== "") {
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg-light">
@@ -76,8 +77,6 @@ if ($search !== "") {
 
         <div class="card-body">
 
-
-            <div class="table-responsive">
                 <form method="GET" class="mb-4">
                      <div class="input-group">
 
@@ -98,6 +97,8 @@ if ($search !== "") {
                     </div>
 
                 </form>
+            <div class="table-responsive">
+                
                 <?php if ($result->num_rows > 0): ?>
                     <table class="table table-bordered table-hover align-middle">
 

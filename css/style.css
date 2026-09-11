@@ -1,0 +1,212 @@
+/* =========================
+   General
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb !important;
+    color: #212529;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+
+/* =========================
+   Headings
+========================= */
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+
+/* =========================
+   Cards
+========================= */
+
+.card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.card-header {
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    padding: 20px;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+
+/* =========================
+   Forms
+========================= */
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #d9dee7;
+    border-radius: 8px;
+    padding: 11px 13px;
+    transition: 0.2s ease;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: #adb5bd;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    box-shadow: 0 3px 8px rgba(13, 110, 253, 0.2);
+}
+
+.btn-warning {
+    color: #212529;
+}
+
+
+/* =========================
+   Search Bar
+========================= */
+
+.input-group .form-control {
+    border-radius: 8px 0 0 8px;
+}
+
+.input-group .btn {
+    border-radius: 0;
+}
+
+.input-group .btn:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+
+/* =========================
+   Table
+========================= */
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    padding: 13px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 13px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.table-hover tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.table td:last-child {
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Alerts
+========================= */
+
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+
+/* =========================
+   Empty Result
+========================= */
+
+.alert-info {
+    padding: 15px 18px;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+
+    .table {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+    }
+}
