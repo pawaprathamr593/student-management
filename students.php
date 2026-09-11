@@ -58,7 +58,7 @@ $result = $conn->query("SELECT * FROM students ORDER BY id DESC");
                                 <th>Department</th>
                                 <th>Academic Year</th>
                                 <th>Admission Date</th>
-                                <th>Admission Date</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
@@ -99,6 +99,12 @@ $result = $conn->query("SELECT * FROM students ORDER BY id DESC");
                                     <?php echo htmlspecialchars($student["admission_date"]); ?>
                                 </td>
                                 <td>
+                                    <a
+                                        href="edit.php?id=<?php echo $student['id']; ?>"
+                                        class="btn btn-warning btn-sm"
+                                    >
+                                        Edit
+                                    </a>
                                     <a
                                         href="delete.php?id=<?php echo $student['id']; ?>"
                                         class="btn btn-danger btn-sm"
