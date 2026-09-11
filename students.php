@@ -1,7 +1,41 @@
 <?php
 require_once "config/database.php";
 
-$result = $conn->query("SELECT * FROM students ORDER BY id DESC");
+$search = trim($_GET["search"] ?? "");
+
+if ($search !== "") {
+
+    $searchTerm = "%" . $search . "%";
+
+    $stmt = $conn->prepare(
+        "SELECT * FROM students
+         WHERE student_name LIKE ?
+         OR email LIKE ?
+         OR mobile LIKE ?
+         OR course LIKE ?
+         OR department LIKE ?
+         ORDER BY id DESC"
+    );
+
+    $stmt->bind_param(
+        "sssss",
+        $searchTerm,
+        $searchTerm,
+        $searchTerm,
+        $searchTerm,
+        $searchTerm
+    );
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+} else {
+
+    $result = $conn->query(
+        "SELECT * FROM students ORDER BY id DESC"
+    );
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +76,29 @@ $result = $conn->query("SELECT * FROM students ORDER BY id DESC");
 
         <div class="card-body">
 
-            <?php if ($result->num_rows > 0): ?>
 
-                <div class="table-responsive">
+            <div class="table-responsive">
+                <form method="GET" class="mb-4">
+                     <div class="input-group">
 
+                         <input
+                            type="text"
+                            name="search"                                class="form-control"
+                            placeholder="Search by name, email, mobile, course or department"
+                            value="<?php echo htmlspecialchars($search); ?>"
+                        >
+
+                        <button type="submit" class="btn btn-primary">
+                            Search
+                        </button>
+
+                        <a href="students.php" class="btn btn-secondary">
+                            Clear
+                        </a>
+                    </div>
+
+                </form>
+                <?php if ($result->num_rows > 0): ?>
                     <table class="table table-bordered table-hover align-middle">
 
                         <thead class="table-dark">
